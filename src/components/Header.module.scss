@@ -2,7 +2,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    // max-width: 380px;
     width: calc(100% - 20px);
     display: flex;
     justify-content: space-between;
@@ -20,7 +19,8 @@
     button {
         border: 0;
         background: #212121;
-        color: #fff;
-        padding: 10px 5px;
+        color: #00CED1;
+        font-weight: 700;
+        padding: 10px;
     }
 }
