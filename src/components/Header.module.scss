@@ -1,0 +1,26 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // max-width: 380px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    background: #363636;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    span {
+        color: #00CED1;
+        font-weight: 700;
+        letter-spacing: 1.1px;
+    }
+
+    button {
+        border: 0;
+        background: #212121;
+        color: #fff;
+        padding: 10px 5px;
+    }
+}
