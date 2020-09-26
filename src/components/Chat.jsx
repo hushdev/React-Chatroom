@@ -28,8 +28,7 @@ export const Chat = (props) => {
         })
 
         setFormValue('');
-        // dummy.current.scrollIntoView({ behavior: 'smooth' });
-        console.log(messages);
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (

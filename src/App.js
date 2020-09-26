@@ -16,6 +16,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 firebase.initializeApp({
   apiKey: "AIzaSyACZH4pfHj3yUHLdStsruXOPk4u_MJVuI4",
   authDomain: "react-chat-e26a1.firebaseapp.com",
+  // authDomain: "192.168.1.39:3000",
   databaseURL: "https://react-chat-e26a1.firebaseio.com",
   projectId: "react-chat-e26a1",
   storageBucket: "react-chat-e26a1.appspot.com",
@@ -42,7 +43,7 @@ export const App = () => {
   if (user) {
     return (
       <div className="chat">
-        <Header />
+        <Header auth={auth} />
         <Chat auth={auth} firestore={firestore} firebase={firebase} />
       </div>
     )

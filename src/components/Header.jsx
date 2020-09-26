@@ -5,7 +5,13 @@ export const Header = (props) => {
     return (
         <header className={cn.header}>
             <span>Chat-room</span>
-            {/* <button onClick={props.signOut()}>Sign Out</button> */}
+            <SignOut auth={props.auth} />
         </header >
+    )
+}
+
+const SignOut = (props) => {
+    return props.auth.currentUser && (
+        <button onClick={() => props.auth.signOut()}>Sign Out</button>
     )
 }
