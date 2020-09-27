@@ -16,6 +16,10 @@
         padding: 0 10px;
         border-radius: 15px;
         color: #fff;
+        max-width: 300px;
+        width: 100%;
+        // width: 100%;
+
         .msg_user {
             color: #00CED1;
             font-size: 13px;
@@ -25,6 +29,14 @@
 
         .msg_text {
             font-size: 14px;
+            word-wrap: break-word;
+
         }
+    }
+}
+
+@media (max-width:400px) {
+    .msg_wrap {
+        max-width: 230px !important; 
     }
 }
