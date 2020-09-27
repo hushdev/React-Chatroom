@@ -33,11 +33,8 @@ export const App = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
 
   if (!user) {
-    return (
-      <div className="chat">
-        <SignIn provider={provider} auth={auth} />
-      </div>
-    )
+    return <SignIn provider={provider} auth={auth} />
+    
   }
 
   if (user) {

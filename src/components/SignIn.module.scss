@@ -1,7 +1,11 @@
 .signIn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     color: #00CED1;
     border: 0;
-    margin: auto;
     background: #212121;
     padding: 15px 10px;
     font-size: 15px;
@@ -12,6 +16,6 @@
 
     &:focus {
         box-shadow: none;
-        transform: translateY(3px);
-    }
+        transform: translateY(3px) translate(-50%, -50%);
+    } 
 }

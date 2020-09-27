@@ -29,19 +29,18 @@ export const Chat = (props) => {
 
         setFormValue('');
         dummy.current.scrollIntoView({ behavior: 'smooth' });
+
     }
 
     return (
         <>
             <div className={cn.chatroom}>
-                <Message incoming={true} message="Hello. I'm happy to meet you in this chatroom." name="Admin" />
-
 
                 {messages && messages.map(msg => {
                     return <Message key={msg.id}
-                        message={msg.text}
-                        name={msg.displayName}
-                        photo={msg.photoURL} />
+                        message={msg}
+                        currentUid={props.auth.currentUser.uid}
+                    />
                 })}
 
                 <span ref={dummy}></span>

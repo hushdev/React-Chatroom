@@ -2,24 +2,27 @@ import React from 'react'
 import cn from './Message.module.scss'
 
 export const Message = (props) => {
-    let messageType = props.incoming ? 'incoming' : 'outgoing'
+    const { text, uid, displayName, photoURL } = props.message
+    const { currentUid } = props
 
-    let userImg = props.incoming
-        ? <img src={props.photo} alt="" />
+    let messageType = uid === currentUid ? 'outgoing' : 'incoming'
+    
+    let userImg = uid !== currentUid
+        ? <img src={photoURL} alt="" />
         : null
 
-
+    let userName = uid !== currentUid
+        ? <p className={cn.msg_user}>{displayName}</p>
+        : null
 
     return (
         <div className={`${cn.msg} ${messageType}`}>
             {userImg}
             <div className={cn.msg_wrap}>
-                <p className={cn.msg_user}>{props.name}</p>
-                <p className={cn.msg_text}>{props.message}</p>
-                <p className={cn.msg_time}>{props.time}</p>
+                {userName}
+                <p className={cn.msg_text}>{text}</p>
             </div>
         </div>
     )
-
 }
 

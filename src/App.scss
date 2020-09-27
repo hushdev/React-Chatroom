@@ -6,15 +6,12 @@
   transform: translate(-50%, -50%);
   overflow: hidden;
 
-
   background: #282828;
   box-shadow: 0 5px 10px rgb(26, 26, 26);
   display: flex;
   justify-content: center;
   flex-direction: column;
   max-width: 400px;
-  max-height: 800px;
-  height: 100%;
   width: 100%;
 }
 
@@ -31,8 +28,8 @@ body {
 }
 
 .outgoing {
-  //global class to identify outgoing and incoming messages
-  margin-left: auto !important;
+  display: flex;
+  justify-content: flex-end;
 
   div {
     border-bottom-right-radius: 0 !important;
@@ -40,7 +37,7 @@ body {
 }
 
 
-@media (max-width:768px) {
+@media (max-width:1024px) {
   .chat {
     max-width: 100%;
     position: absolute;
@@ -48,6 +45,7 @@ body {
     left: 0;
     width: 100%;
     max-height: 100% !important;
+    height: 100% !important;
     transform: none;
   }
 }
