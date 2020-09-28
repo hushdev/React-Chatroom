@@ -13,23 +13,23 @@ export const Chat = (props) => {
 
     const [formValue, setFormValue] = useState('');
 
-
     const sendMessage = async (e) => {
         e.preventDefault();
 
-        const { uid, photoURL, displayName } = props.auth.currentUser;
+        if (formValue && !formValue.trim() == "" && !formValue.trim == " ") {
+            const { uid, photoURL, displayName } = props.auth.currentUser;
 
-        await messagesRef.add({
-            text: formValue,
-            createdAt: props.firebase.firestore.FieldValue.serverTimestamp(),
-            uid,
-            photoURL,
-            displayName
-        })
+            await messagesRef.add({
+                text: formValue,
+                createdAt: props.firebase.firestore.FieldValue.serverTimestamp(),
+                uid,
+                photoURL,
+                displayName
+            })
 
-        setFormValue('');
-        dummy.current.scrollIntoView({ behavior: 'smooth' });
-
+            setFormValue('');
+            dummy.current.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     return (
