@@ -1,17 +1,22 @@
 .header {
-    width: calc(100% - 20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
     display: flex;
     justify-content: space-between;
     z-index: 10;
     align-items: center;
-    padding: 15px 10px;
     background: #363636;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
     span {
         color: #00CED1;
-        font-weight: 700;
+        font-weight: 500;
         letter-spacing: 1.1px;
+        padding: 8px 10px;
+        text-transform: uppercase;
     }
 
     button {
@@ -19,6 +24,6 @@
         background: #212121;
         color: #00CED1;
         font-weight: 700;
-        padding: 10px;
+        padding: 19px 15px;
     }
 }

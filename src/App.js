@@ -11,12 +11,10 @@ import 'firebase/auth'
 
 
 import { useAuthState } from 'react-firebase-hooks/auth'
-// import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 firebase.initializeApp({
   apiKey: "AIzaSyACZH4pfHj3yUHLdStsruXOPk4u_MJVuI4",
   authDomain: "react-chat-e26a1.firebaseapp.com",
-  // authDomain: "192.168.1.39:3000",
   databaseURL: "https://react-chat-e26a1.firebaseio.com",
   projectId: "react-chat-e26a1",
   storageBucket: "react-chat-e26a1.appspot.com",
@@ -27,23 +25,20 @@ firebase.initializeApp({
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
-
 export const App = () => {
   const [user] = useAuthState(auth)
   const provider = new firebase.auth.GoogleAuthProvider()
 
   if (!user) {
     return <SignIn provider={provider} auth={auth} />
-    
+
   }
 
-  if (user) {
-    return (
-      <div className="chat">
-        <Header auth={auth} />
-        <Chat auth={auth} firestore={firestore} firebase={firebase} />
-      </div>
-    )
-  }
+  return (
+    <div className="chat">
+      <Header auth={auth} />
+      <Chat auth={auth} firestore={firestore} firebase={firebase} />
+    </div>
+  )
 }
 

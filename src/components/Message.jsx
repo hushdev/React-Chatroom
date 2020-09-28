@@ -6,7 +6,7 @@ export const Message = (props) => {
     const { currentUid } = props
 
     let messageType = uid === currentUid ? 'outgoing' : 'incoming'
-    
+
     let userImg = uid !== currentUid
         ? <img src={photoURL} alt="" />
         : null
@@ -15,12 +15,14 @@ export const Message = (props) => {
         ? <p className={cn.msg_user}>{displayName}</p>
         : null
 
+
     return (
         <div className={`${cn.msg} ${messageType}`}>
             {userImg}
             <div className={cn.msg_wrap}>
                 {userName}
                 <p className={cn.msg_text}>{text}</p>
+                {/* <p>{calculatedCreatedAt}</p> */}
             </div>
         </div>
     )
