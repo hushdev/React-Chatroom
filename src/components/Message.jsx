@@ -22,7 +22,6 @@ export const Message = (props) => {
             <div className={cn.msg_wrap}>
                 {userName}
                 <p className={cn.msg_text}>{text}</p>
-                {/* <p>{calculatedCreatedAt}</p> */}
             </div>
         </div>
     )
